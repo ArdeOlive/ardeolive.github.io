@@ -203,11 +203,13 @@ h3 {
   align-items: center;
 }
 
-.author-text p {
+.author-text p,
+.book-text p {
   color: var(--muted);
 }
 
-.author-text strong {
+.author-text strong,
+.book-text strong {
   color: var(--text);
 }
 
@@ -234,31 +236,33 @@ h3 {
   box-shadow: 0 24px 80px rgba(0,0,0,.42);
 }
 
+/* CAPA DO LIVRO */
 .book-section {
   background: rgba(255,255,255,.025);
   border-block: 1px solid var(--line);
 }
 
 .book-cover {
-  min-height: 620px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  color: var(--muted);
-  padding: 30px;
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
 }
 
-.book-cover span {
+.book-cover img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
   display: block;
-  font-size: 28px;
-  color: var(--text);
-  font-weight: 800;
+  object-fit: contain;
+  border-radius: 18px;
+  filter: drop-shadow(0 28px 42px rgba(0,0,0,.55));
+  transition: transform .3s ease;
 }
 
-.book-cover small {
-  display: block;
-  max-width: 360px;
-  margin-top: 8px;
+.book-cover img:hover {
+  transform: scale(1.025);
 }
 
 .cards-grid,
@@ -382,6 +386,10 @@ h3 {
     width: auto;
     height: auto;
   }
+
+  .book-cover img {
+    max-width: 360px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -424,6 +432,14 @@ h3 {
   }
 
   .author-photo img {
+    max-width: 100%;
+  }
+
+  .book-cover {
+    padding: 18px;
+  }
+
+  .book-cover img {
     max-width: 100%;
   }
 

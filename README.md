@@ -10,6 +10,7 @@ Site estático pronto para publicar no GitHub Pages.
 - `favicon.svg` — ícone do site
 - `images/logo.png` — logotipo oficial
 - `images/autor.jpg` — foto do autor em tamanho original
+- `images/livro.png` — capa do livro exibida na seção Livro
 
 ## Estrutura correta
 
@@ -22,6 +23,7 @@ favicon.svg
 images/
   logo.png
   autor.jpg
+  livro.png
 ```
 
 ## Como publicar no GitHub Pages
