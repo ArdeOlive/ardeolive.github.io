@@ -39,15 +39,21 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid var(--line);
 }
 
-.logo {
-  width: 120px;
-  height: auto;
-  display: block;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  font-weight: 800;
-  letter-spacing: -1px;
+.logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+}
+
+.logo img{
+    height:85px;
+    width:auto;
+    display:block;
+    transition:0.3s ease;
+}
+
+.logo img:hover{
+    transform:scale(1.05);
 }
 
 .nav { display: flex; gap: 26px; color: var(--muted); font-size: 14px; }
