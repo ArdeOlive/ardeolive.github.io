@@ -1,12 +1,11 @@
 :root {
   --bg: #07080c;
   --bg-soft: #10131b;
-  --card: #151925;
   --text: #f4f4f5;
   --muted: #a8adba;
   --line: rgba(255,255,255,.12);
-  --accent: #c5162e;
-  --accent-2: #2e74ff;
+  --accent: #d4a11f;
+  --accent-dark: #8b6410;
   --shadow: 0 24px 80px rgba(0,0,0,.35);
 }
 
@@ -16,8 +15,8 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(197,22,46,.22), transparent 34%),
-    radial-gradient(circle at 90% 10%, rgba(46,116,255,.18), transparent 28%),
+    radial-gradient(circle at top left, rgba(212,161,31,.18), transparent 32%),
+    radial-gradient(circle at 90% 10%, rgba(255,255,255,.08), transparent 25%),
     var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -28,45 +27,48 @@ a { color: inherit; text-decoration: none; }
 .site-header {
   position: fixed;
   inset: 0 0 auto 0;
-  height: 72px;
+  height: 92px;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 7vw;
-  background: rgba(7,8,12,.74);
+  background: rgba(7,8,12,.78);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--line);
 }
 
-.logo{
-    display:flex;
-    align-items:center;
-    text-decoration:none;
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-.logo img{
-    height:85px;
-    width:auto;
-    display:block;
-    transition:0.3s ease;
+.logo img {
+  height: 78px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform .25s ease, opacity .25s ease;
 }
 
-.logo img:hover{
-    transform:scale(1.05);
+.logo img:hover {
+  transform: scale(1.04);
+  opacity: .96;
 }
 
 .nav { display: flex; gap: 26px; color: var(--muted); font-size: 14px; }
 .nav a:hover { color: var(--text); }
-.menu-toggle { display: none; background: none; color: var(--text); border: 0; font-size: 28px; }
+.menu-toggle { display: none; background: none; color: var(--text); border: 0; font-size: 28px; cursor: pointer; }
 
-.section { padding: 110px 7vw; }
+.section { padding: 124px 7vw; }
 .hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1.35fr .65fr;
   gap: 46px;
   align-items: center;
+  padding-top: 160px;
 }
 
 .eyebrow {
@@ -95,11 +97,11 @@ h3 { color: var(--muted); font-size: 22px; }
   font-weight: 800;
   border: 1px solid var(--line);
 }
-.btn.primary { background: var(--accent); border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #080808; }
 .btn.secondary { background: rgba(255,255,255,.04); }
 .btn:hover { transform: translateY(-2px); transition: .2s ease; }
 
-.hero-card, .info-card, .photo-placeholder, .book-cover, .gallery-item {
+.hero-card, .info-card, .author-photo, .book-cover, .gallery-item {
   background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
   border: 1px solid var(--line);
   border-radius: 28px;
@@ -115,18 +117,34 @@ h3 { color: var(--muted); font-size: 22px; }
   gap: 48px;
   align-items: center;
 }
-.photo-placeholder, .book-cover {
-  min-height: 520px;
+
+.author-photo {
+  margin: 0;
+  overflow: hidden;
+  min-height: 560px;
+}
+
+.author-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.book-cover {
+  min-height: 620px;
   display: grid;
   place-items: center;
   text-align: center;
   color: var(--muted);
+  padding: 30px;
 }
-.photo-placeholder span, .book-cover span { display: block; font-size: 28px; color: var(--text); font-weight: 800; }
-.photo-placeholder small, .book-cover small { display: block; margin-top: 8px; }
+.book-cover span { display: block; font-size: 28px; color: var(--text); font-weight: 800; }
+.book-cover small { display: block; max-width: 360px; margin-top: 8px; }
 
 .book-section { background: rgba(255,255,255,.025); border-block: 1px solid var(--line); }
-.book-cover { min-height: 620px; }
 
 .cards-grid, .gallery-grid {
   display: grid;
@@ -147,10 +165,12 @@ h3 { color: var(--muted); font-size: 22px; }
 .footer { padding: 34px 7vw; border-top: 1px solid var(--line); color: var(--muted); text-align: center; }
 
 @media (max-width: 900px) {
+  .site-header { height: 78px; }
+  .logo img { height: 62px; }
   .menu-toggle { display: block; }
   .nav {
     position: absolute;
-    top: 72px;
+    top: 78px;
     left: 0;
     right: 0;
     display: none;
@@ -163,5 +183,7 @@ h3 { color: var(--muted); font-size: 22px; }
   .hero, .two-columns, .book-section { grid-template-columns: 1fr; }
   .cards-grid, .gallery-grid { grid-template-columns: 1fr; }
   h1 { letter-spacing: -3px; }
-  .section { padding: 92px 6vw; }
+  .section { padding: 96px 6vw; }
+  .hero { padding-top: 130px; }
+  .author-photo, .author-photo img { min-height: 440px; }
 }
