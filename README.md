@@ -5,28 +5,32 @@ Site estático pronto para publicar no GitHub Pages.
 ## Arquivos
 
 - `index.html` — estrutura da página
-- `style.css` — visual responsivo
+- `style.css` — visual e responsividade
 - `script.js` — menu mobile e ano automático
-- `favicon.svg` — ícone do site
-- `images/logo.png` — logotipo do autor
+- `images/logo.png` — logotipo oficial
 - `images/autor.jpg` — foto do autor
 
-## Publicar no GitHub Pages
+## Como publicar no GitHub Pages
 
-1. Crie ou abra o repositório `pmrvarnaldo.github.io`
-2. Envie todos os arquivos deste projeto para a raiz do repositório
+1. Crie um repositório chamado `pmrvarnaldo.github.io`
+2. Envie todos os arquivos e a pasta `images` para a raiz do repositório
 3. Vá em **Settings > Pages**
 4. Em **Branch**, selecione `main` e `/root`
 5. Salve
-6. Aguarde alguns minutos
-
-O site ficará em:
+6. O site ficará disponível em:
 
 ```txt
 https://pmrvarnaldo.github.io
 ```
 
-## Observação importante
+## Estrutura correta
 
-O arquivo `index.html` precisa ficar na raiz do repositório, junto com `style.css` e `script.js`.
-A pasta `images` também precisa ficar na raiz.
+```txt
+index.html
+style.css
+script.js
+README.md
+images/
+  logo.png
+  autor.jpg
+```
