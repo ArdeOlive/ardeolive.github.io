@@ -40,9 +40,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 .logo {
-  width: 42px;
-  height: 42px;
-  display: grid;
+  width: 120px;
+  height: auto;
+  display: block;
   place-items: center;
   border: 1px solid var(--line);
   border-radius: 50%;
