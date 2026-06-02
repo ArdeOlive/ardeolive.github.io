@@ -128,7 +128,7 @@ h3 { color: var(--muted); font-size: 22px; }
   width: 50%;
   height: 50%;
   min-height: 140px;
-  display: block;
+  display: flex;
   object-fit: cover;
   object-position: center top;
 }
