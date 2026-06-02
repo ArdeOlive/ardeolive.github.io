@@ -20,3 +20,8 @@ images/
   capa.png
   logolivro.png
 ```
+
+
+## Fundo sombrio investigativo
+
+Foi criado o arquivo `images/fundo.jpg` e o `style.css` foi atualizado para usar um visual sombrio, intrigante e investigativo, inspirado em FBI + Seven + Mindhunter + Cyber Investigation.
