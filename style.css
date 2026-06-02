@@ -242,7 +242,7 @@ h3 {
 .book-cover {
   min-height: 620px;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   padding: 28px;
 }
