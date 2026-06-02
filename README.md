@@ -2,16 +2,11 @@
 
 Site estático pronto para publicar no GitHub Pages.
 
-## Arquivos
+## Ajuste aplicado
 
-- `index.html` — estrutura da página
-- `style.css` — visual e responsividade
-- `script.js` — menu mobile e ano automático
-- `favicon.svg` — ícone do site
-- `images/logo.png` — logotipo oficial
-- `images/autor.jpg` — foto do autor em tamanho original
+A foto do autor permanece no tamanho 512x769 pixels no desktop. A moldura agora tem exatamente o mesmo tamanho da imagem e fica centralizada no espaço destinado à foto.
 
-## Estrutura correta
+## Estrutura
 
 ```txt
 index.html
@@ -22,19 +17,6 @@ favicon.svg
 images/
   logo.png
   autor.jpg
-```
-
-## Como publicar no GitHub Pages
-
-1. Crie ou abra o repositório `pmrvarnaldo.github.io`
-2. Envie todos os arquivos para a raiz do repositório
-3. Envie também a pasta `images`
-4. Vá em **Settings > Pages**
-5. Em **Branch**, selecione `main` e `/root`
-6. Salve
-
-O site ficará disponível em:
-
-```txt
-https://pmrvarnaldo.github.io
+  capa.png
+  logolivro.png
 ```
