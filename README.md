@@ -79,3 +79,8 @@ O menu suspenso foi alterado para ficar em lista vertical:
 - Texto da página Autor justificado.
 - Texto da página Livro justificado.
 - Conteúdo da página Personagens reposicionado para iniciar a 5mm da borda superior.
+
+
+## Ajuste aplicado
+
+- Na página Contato, a divisória superior do rodapé e o texto dos direitos autorais foram elevados em 3cm.

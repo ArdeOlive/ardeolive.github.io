@@ -783,3 +783,9 @@ body:has(#personagens) .page-section {
     padding-top: 5mm;
   }
 }
+
+
+/* CONTATO — SUBIR DIVISÓRIA E DIREITOS AUTORAIS EM 3CM */
+body:has(#contato) .footer {
+  margin-top: -3cm;
+}
