@@ -103,3 +103,14 @@ O menu suspenso foi alterado para ficar em lista vertical:
 
 - Todos os rodapés do site foram alinhados na mesma altura do rodapé da página Contato.
 - O ajuste agora é global no `style.css`, aplicado à classe `.footer`.
+
+
+## Ajuste aplicado
+
+- Os dados da página Personagens foram reposicionados para 30mm da borda superior.
+- A fonte dos textos de cada personagem dentro das molduras foi reduzida em 1 ponto.
+
+
+## Ajuste aplicado
+
+- A foto do autor na página Autor foi reduzida em 10%, mantendo a proporção e a moldura alinhada ao novo tamanho.

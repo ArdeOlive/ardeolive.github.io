@@ -773,16 +773,7 @@ body::after {
   hyphens: auto;
 }
 
-/* PÁGINA PERSONAGENS — 5mm DA BORDA SUPERIOR */
-body:has(#personagens) .page-section {
-  padding-top: 5mm;
-}
 
-@media (max-width: 900px) {
-  body:has(#personagens) .page-section {
-    padding-top: 5mm;
-  }
-}
 
 
 /* PÁGINA AUTOR SEPARADA */
@@ -798,4 +789,62 @@ body:has(#autor) .page-section {
 /* RODAPÉS — MESMA ALTURA EM TODAS AS PÁGINAS */
 .footer {
   margin-top: -2cm;
+}
+
+
+/* PÁGINA PERSONAGENS — 30MM DA BORDA SUPERIOR E TEXTO MENOR */
+body:has(#personagens) .page-section {
+  padding-top: 30mm;
+}
+
+#personagens .info-card p {
+  font-size: calc(1em - 1pt);
+}
+
+@media (max-width: 900px) {
+  body:has(#personagens) .page-section {
+    padding-top: 30mm;
+  }
+
+  #personagens .info-card p {
+    font-size: calc(1em - 1pt);
+  }
+}
+
+
+/* PÁGINA AUTOR — FOTO REDUZIDA EM 10% */
+body:has(#autor) .author-photo {
+  width: 461px;
+  height: 692px;
+}
+
+body:has(#autor) .author-photo img {
+  width: 461px;
+  height: 692px;
+}
+
+@media (max-width: 900px) {
+  body:has(#autor) .author-photo {
+    width: 342px;
+    height: 514px;
+  }
+
+  body:has(#autor) .author-photo img {
+    width: 342px;
+    height: 514px;
+  }
+}
+
+@media (max-width: 520px) {
+  body:has(#autor) .author-photo {
+    width: 288px;
+    height: 433px;
+    max-width: 100%;
+  }
+
+  body:has(#autor) .author-photo img {
+    width: 288px;
+    height: 433px;
+    max-width: 100%;
+  }
 }
