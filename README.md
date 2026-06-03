@@ -57,3 +57,12 @@ O submenu **Livros** agora funciona como lista suspensa em cascata:
   - Galeria
 
 O menu foi ajustado no `style.css` usando regras de `:hover`.
+
+
+## Ajuste aplicado no menu
+
+O menu suspenso foi alterado para ficar em lista vertical:
+
+- Ao passar o mouse em **Livros**, aparece **O Arquiteto do Caos** logo abaixo.
+- Ao passar o mouse em **O Arquiteto do Caos**, aparecem **Livro**, **Personagens** e **Galeria** logo abaixo dele.
+- Nenhum submenu abre mais para a direita ou esquerda.
