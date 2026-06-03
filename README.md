@@ -84,3 +84,11 @@ O menu suspenso foi alterado para ficar em lista vertical:
 ## Ajuste aplicado
 
 - Na página Contato, a divisória superior do rodapé e o texto dos direitos autorais foram elevados em 3cm.
+
+
+## Ajuste aplicado
+
+- A seção Autor foi removida da página inicial.
+- Foi criada a página separada `autor.html`.
+- O menu **Autor** agora aponta diretamente para `autor.html`.
+- A página inicial ficou somente com a seção principal de abertura.
