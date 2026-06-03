@@ -97,3 +97,9 @@ O menu suspenso foi alterado para ficar em lista vertical:
 ## Ajuste aplicado
 
 - Na página Contato, o rodapé foi baixado 1cm em relação ao ajuste anterior.
+
+
+## Ajuste aplicado
+
+- Todos os rodapés do site foram alinhados na mesma altura do rodapé da página Contato.
+- O ajuste agora é global no `style.css`, aplicado à classe `.footer`.

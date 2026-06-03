@@ -792,7 +792,10 @@ body:has(#autor) .page-section {
 }
 
 
-/* CONTATO — AJUSTE FINAL DO RODAPÉ: DESCER 1CM */
-body:has(#contato) .footer {
+
+
+
+/* RODAPÉS — MESMA ALTURA EM TODAS AS PÁGINAS */
+.footer {
   margin-top: -2cm;
 }
