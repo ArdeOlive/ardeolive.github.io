@@ -307,3 +307,17 @@ body::after {
   background: rgba(2,4,8,.38);
   border-block: 1px solid rgba(212,161,31,.13);
 }
+
+
+/* TEXTOS JUSTIFICADOS NA PÁGINA PERSONAGENS */
+#personagens .info-card p {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.75;
+  hyphens: auto;
+}
+
+#personagens .info-card {
+  display: flex;
+  flex-direction: column;
+}
