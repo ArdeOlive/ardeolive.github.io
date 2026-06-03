@@ -44,3 +44,16 @@ images/
 ## Publicação no GitHub Pages
 
 Envie todos os arquivos e a pasta `images` para a raiz do repositório.
+
+
+## Ajuste aplicado no menu
+
+O submenu **Livros** agora funciona como lista suspensa em cascata:
+
+- Ao passar o mouse sobre **Livros**, aparece **O Arquiteto do Caos**.
+- Ao passar o mouse sobre **O Arquiteto do Caos**, aparecem:
+  - Livro
+  - Personagens
+  - Galeria
+
+O menu foi ajustado no `style.css` usando regras de `:hover`.
