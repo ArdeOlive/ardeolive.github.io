@@ -114,3 +114,14 @@ O menu suspenso foi alterado para ficar em lista vertical:
 ## Ajuste aplicado
 
 - A foto do autor na página Autor foi reduzida em 10%, mantendo a proporção e a moldura alinhada ao novo tamanho.
+
+
+## Ajuste aplicado
+
+- Todas as páginas foram ajustadas para visualização flexível em computadores, laptops, tablets e celulares.
+- Foram adicionadas regras responsivas para cabeçalho, menu, imagens, seção do autor, seção do livro, galeria, personagens e contato.
+
+
+## Ajuste aplicado
+
+- A foto do autor na página Autor foi reduzida em mais 10%, mantendo responsividade.

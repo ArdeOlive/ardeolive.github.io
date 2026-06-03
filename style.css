@@ -848,3 +848,318 @@ body:has(#autor) .author-photo img {
     max-width: 100%;
   }
 }
+
+
+/* RESPONSIVIDADE GERAL — DESKTOP, LAPTOP, TABLET E CELULAR */
+img {
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* LAPTOPS E TELAS MÉDIAS */
+@media (max-width: 1200px) {
+  .site-header {
+    padding: 0 5vw;
+  }
+
+  .section {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .hero {
+    grid-template-columns: 1.1fr .9fr;
+    gap: 34px;
+  }
+
+  .two-columns,
+  .book-section {
+    gap: 34px;
+  }
+
+  .author-photo {
+    width: 414px;
+    height: 623px;
+  }
+
+  .author-photo img {
+    width: 414px;
+    height: 623px;
+  }
+
+  .cards-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+  .site-header {
+    height: 78px;
+    padding: 0 6vw;
+  }
+
+  .logo img {
+    height: 58px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 22px 6vw;
+    background: rgba(4,7,13,.97);
+    border-bottom: 1px solid rgba(212,161,31,.22);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a,
+  .dropdown-toggle,
+  .submenu-toggle {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .hero,
+  .two-columns,
+  .book-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 130px;
+  }
+
+  .section {
+    padding: 96px 6vw;
+  }
+
+  .page-section {
+    padding-top: 120px;
+  }
+
+  h1 {
+    font-size: clamp(42px, 11vw, 72px);
+    letter-spacing: -3px;
+  }
+
+  h2 {
+    font-size: clamp(32px, 7vw, 48px);
+  }
+
+  .author-photo {
+    width: 342px;
+    height: 514px;
+    max-width: 100%;
+  }
+
+  .author-photo img {
+    width: 342px;
+    height: 514px;
+    max-width: 100%;
+  }
+
+  .book-visuals {
+    min-height: auto;
+    grid-template-columns: 42% 58%;
+    gap: 12px;
+    padding: 22px;
+  }
+
+  .book-cover img {
+    max-width: 230px;
+  }
+
+  .book-logo img {
+    max-width: 300px;
+  }
+
+  .cards-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-links {
+    align-items: center;
+  }
+}
+
+/* CELULARES */
+@media (max-width: 520px) {
+  .site-header {
+    height: 72px;
+    padding: 0 5vw;
+  }
+
+  .logo img {
+    height: 48px;
+  }
+
+  .nav {
+    top: 72px;
+  }
+
+  .section {
+    padding: 82px 5vw;
+  }
+
+  .page-section {
+    padding-top: 92px;
+  }
+
+  .hero {
+    padding-top: 112px;
+  }
+
+  h1 {
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  h2 {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+
+  .tagline {
+    font-size: 20px;
+  }
+
+  .hero-card,
+  .info-card,
+  .book-visuals,
+  .gallery-item {
+    border-radius: 20px;
+  }
+
+  .author-photo {
+    width: min(288px, 90vw);
+    height: auto;
+    aspect-ratio: 288 / 433;
+  }
+
+  .author-photo img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .book-visuals {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 18px;
+  }
+
+  .book-cover img {
+    max-width: 210px;
+  }
+
+  .book-logo img {
+    max-width: 260px;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-links a,
+  .contact-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .footer {
+    padding: 26px 5vw;
+    font-size: 13px;
+  }
+}
+
+/* CELULARES MUITO PEQUENOS */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .author-photo {
+    width: min(260px, 88vw);
+  }
+
+  .book-cover img {
+    max-width: 190px;
+  }
+
+  .book-logo img {
+    max-width: 230px;
+  }
+}
+
+
+/* PÁGINA AUTOR — FOTO REDUZIDA MAIS 10% */
+body:has(#autor) .author-photo {
+  width: 415px;
+  height: 623px;
+}
+
+body:has(#autor) .author-photo img {
+  width: 415px;
+  height: 623px;
+}
+
+@media (max-width: 1200px) {
+  body:has(#autor) .author-photo {
+    width: 373px;
+    height: 561px;
+  }
+
+  body:has(#autor) .author-photo img {
+    width: 373px;
+    height: 561px;
+  }
+}
+
+@media (max-width: 900px) {
+  body:has(#autor) .author-photo {
+    width: 308px;
+    height: 463px;
+  }
+
+  body:has(#autor) .author-photo img {
+    width: 308px;
+    height: 463px;
+  }
+}
+
+@media (max-width: 520px) {
+  body:has(#autor) .author-photo {
+    width: min(259px, 88vw);
+    height: auto;
+    aspect-ratio: 259 / 390;
+  }
+
+  body:has(#autor) .author-photo img {
+    width: 100%;
+    height: 100%;
+  }
+}
