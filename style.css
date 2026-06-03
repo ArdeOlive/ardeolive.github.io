@@ -206,8 +206,7 @@ h3 { color: var(--muted); font-size: 22px; }
 .info-card { padding: 26px; }
 .info-card h3 { color: var(--text); margin-bottom: 12px; }
 .info-card p { color: var(--muted); }
-.info-card p { text-align: justify); }
-.gallery-item { min-height: 220px; display: grid; place-items: center; color: var(--muted); text-align: center; padding: 20px; }
+.gallery-item { min-height: 220px; display: grid; place-items: center; color: var(--muted); text-align: justify; padding: 20px; }
 
 .contact-section { text-align: center; max-width: 900px; margin: 0 auto; }
 .contact-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
