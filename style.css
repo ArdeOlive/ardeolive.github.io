@@ -1207,3 +1207,10 @@ body:has(#personagens) .footer {
         width:110px;
     }
 }
+
+
+/* AJUSTE: aumentar 2cm na largura da moldura de texto da página inicial */
+.hero-card{
+    max-width: calc(100% + 2cm);
+    width: calc(100% + 2cm);
+}
