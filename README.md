@@ -125,3 +125,8 @@ O menu suspenso foi alterado para ficar em lista vertical:
 ## Ajuste aplicado
 
 - A foto do autor na página Autor foi reduzida em mais 10%, mantendo responsividade.
+
+
+## Ajuste aplicado
+
+- O rodapé da página Personagens foi elevado em 5mm.

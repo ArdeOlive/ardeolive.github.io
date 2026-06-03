@@ -1163,3 +1163,9 @@ body:has(#autor) .author-photo img {
     height: 100%;
   }
 }
+
+
+/* PERSONAGENS — SUBIR RODAPÉ EM 5MM */
+body:has(#personagens) .footer {
+  margin-top: calc(-2cm - 5mm);
+}
