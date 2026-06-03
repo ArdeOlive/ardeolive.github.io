@@ -762,3 +762,24 @@ body::after {
     display: flex;
   }
 }
+
+
+/* AJUSTES DE TEXTO — AUTOR E LIVRO */
+#autor p,
+.book-text p {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.75;
+  hyphens: auto;
+}
+
+/* PÁGINA PERSONAGENS — 5mm DA BORDA SUPERIOR */
+body:has(#personagens) .page-section {
+  padding-top: 5mm;
+}
+
+@media (max-width: 900px) {
+  body:has(#personagens) .page-section {
+    padding-top: 5mm;
+  }
+}

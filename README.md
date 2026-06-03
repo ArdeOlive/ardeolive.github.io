@@ -72,3 +72,10 @@ O menu suspenso foi alterado para ficar em lista vertical:
 
 - Removidos os botões "Conheça o Livro" e "Conheça o Autor" da página inicial.
 - Reduzida a camada escura/transparência sobre o fundo para deixar a imagem `images/fundo.jpg` mais aparente.
+
+
+## Ajustes aplicados
+
+- Texto da página Autor justificado.
+- Texto da página Livro justificado.
+- Conteúdo da página Personagens reposicionado para iniciar a 5mm da borda superior.
