@@ -1214,3 +1214,16 @@ body:has(#personagens) .footer {
     max-width: calc(100% + 2cm);
     width: calc(100% + 2cm);
 }
+
+
+/* AJUSTE: mover moldura de texto da página inicial 2cm para a direita */
+.hero-card{
+    position: relative;
+    left: 2cm;
+}
+
+@media (max-width: 900px){
+    .hero-card{
+        left: 0;
+    }
+}
