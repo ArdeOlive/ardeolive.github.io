@@ -141,3 +141,9 @@ O menu suspenso foi alterado para ficar em lista vertical:
 
 - A moldura de texto da página inicial foi reduzida em 1cm em relação ao ajuste anterior.
 - A moldura agora fica flexível em altura, sem limite fixo, para comportar todo o texto sem cortar conteúdo.
+
+
+## Ajuste aplicado
+
+- Os menus da página inicial foram movimentados 1,5cm para a esquerda.
+- O ajuste foi aplicado somente na página inicial, mantendo a responsividade em tablets e celulares.
