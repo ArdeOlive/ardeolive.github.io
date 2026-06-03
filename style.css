@@ -1187,3 +1187,23 @@ body:has(#personagens) .footer {
   background: rgba(212,161,31,.12);
   color: var(--text);
 }
+
+
+/* LOGO DO LIVRO NA PÁGINA INICIAL */
+.hero-book-logo{
+    display:flex;
+    justify-content:center;
+    margin:0 auto 20px auto;
+}
+
+.hero-book-logo img{
+    width:140px;
+    height:auto;
+    display:block;
+}
+
+@media (max-width:768px){
+    .hero-book-logo img{
+        width:110px;
+    }
+}
