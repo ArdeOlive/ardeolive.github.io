@@ -1230,3 +1230,32 @@ body:has(#personagens) .footer {
         left: 0;
     }
 }
+
+
+/* AJUSTE: reduzir 1cm da moldura de texto da página inicial e deixá-la flexível */
+.hero-card {
+  width: calc(100% + 1cm);
+  max-width: calc(100% + 1cm);
+  min-height: auto;
+  height: auto;
+  overflow: visible;
+  justify-content: flex-start;
+  align-self: center;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+.hero-card h2,
+.hero-card p,
+.hero-card .card-label {
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .hero-card {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    height: auto;
+  }
+}
