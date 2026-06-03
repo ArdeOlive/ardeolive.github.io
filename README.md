@@ -66,3 +66,9 @@ O menu suspenso foi alterado para ficar em lista vertical:
 - Ao passar o mouse em **Livros**, aparece **O Arquiteto do Caos** logo abaixo.
 - Ao passar o mouse em **O Arquiteto do Caos**, aparecem **Livro**, **Personagens** e **Galeria** logo abaixo dele.
 - Nenhum submenu abre mais para a direita ou esquerda.
+
+
+## Ajuste aplicado
+
+- Removidos os botões "Conheça o Livro" e "Conheça o Autor" da página inicial.
+- Reduzida a camada escura/transparência sobre o fundo para deixar a imagem `images/fundo.jpg` mais aparente.

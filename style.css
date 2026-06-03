@@ -17,7 +17,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   background:
-    linear-gradient(rgba(5,8,15,.88), rgba(5,8,15,.95)),
+    linear-gradient(rgba(5,8,15,.68), rgba(5,8,15,.78)),
     radial-gradient(circle at 15% 20%, rgba(212,161,31,.10), transparent 40%),
     radial-gradient(circle at 85% 10%, rgba(145,0,20,.10), transparent 36%),
     radial-gradient(circle at 50% 80%, rgba(255,255,255,.04), transparent 45%),
@@ -281,7 +281,7 @@ body::after {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at center, transparent 38%, rgba(0,0,0,.58) 100%),
+    radial-gradient(circle at center, transparent 42%, rgba(0,0,0,.36) 100%),
     linear-gradient(120deg, rgba(0,0,0,.20), rgba(212,161,31,.035), rgba(90,0,12,.08));
   pointer-events: none;
   z-index: -1;
@@ -298,7 +298,7 @@ body::after {
 .book-visuals,
 .gallery-item {
   background:
-    linear-gradient(145deg, rgba(7,10,18,.82), rgba(7,10,18,.58)),
+    linear-gradient(145deg, rgba(7,10,18,.72), rgba(7,10,18,.48)),
     linear-gradient(145deg, rgba(212,161,31,.08), rgba(255,255,255,.02));
   border: 1px solid rgba(212,161,31,.16);
 }
