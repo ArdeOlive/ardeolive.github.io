@@ -785,14 +785,14 @@ body:has(#personagens) .page-section {
 }
 
 
-/* CONTATO — SUBIR DIVISÓRIA E DIREITOS AUTORAIS EM 3CM */
-body:has(#contato) .footer {
-  margin-top: -3cm;
-}
-
-
 /* PÁGINA AUTOR SEPARADA */
 body:has(#autor) .page-section {
   min-height: 100vh;
   padding-top: 160px;
+}
+
+
+/* CONTATO — AJUSTE FINAL DO RODAPÉ: DESCER 1CM */
+body:has(#contato) .footer {
+  margin-top: -2cm;
 }

@@ -92,3 +92,8 @@ O menu suspenso foi alterado para ficar em lista vertical:
 - Foi criada a página separada `autor.html`.
 - O menu **Autor** agora aponta diretamente para `autor.html`.
 - A página inicial ficou somente com a seção principal de abertura.
+
+
+## Ajuste aplicado
+
+- Na página Contato, o rodapé foi baixado 1cm em relação ao ajuste anterior.
