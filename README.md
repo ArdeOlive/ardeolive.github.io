@@ -1,15 +1,15 @@
-# Página oficial — Arnaldo de Oliveira
+# Site oficial — Arnaldo de Oliveira
 
-Site estático pronto para publicar no GitHub Pages.
-
-## Ajuste aplicado
-
-A foto do autor permanece no tamanho 512x769 pixels no desktop. A moldura agora tem exatamente o mesmo tamanho da imagem e fica centralizada no espaço destinado à foto.
+Site reorganizado em estrutura multipáginas para GitHub Pages.
 
 ## Estrutura
 
 ```txt
 index.html
+livro.html
+personagens.html
+galeria.html
+contato.html
 style.css
 script.js
 README.md
@@ -19,9 +19,28 @@ images/
   autor.jpg
   capa.png
   logolivro.png
+  fundo.jpg
+  contatos01.png
+  contatos02.png
+  contatos03.png
+  midias00.png
+  midias01.png
+  midias02.png
+  midias04.png
+  midias12.png
 ```
 
+## Organização do menu
 
-## Fundo sombrio investigativo
+- Início
+- Autor
+- Livros
+  - O Arquiteto do Caos
+    - Livro
+    - Personagens
+    - Galeria
+- Contato
 
-Foi criado o arquivo `images/fundo.jpg` e o `style.css` foi atualizado para usar um visual sombrio, intrigante e investigativo, inspirado em FBI + Seven + Mindhunter + Cyber Investigation.
+## Publicação no GitHub Pages
+
+Envie todos os arquivos e a pasta `images` para a raiz do repositório.

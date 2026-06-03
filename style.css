@@ -430,3 +430,98 @@ body::after {
   transform: scale(1.08);
   opacity: .96;
 }
+
+
+/* ESTRUTURA MULTIPÁGINAS E MENUS */
+.page-section {
+  min-height: 100vh;
+  padding-top: 160px;
+}
+
+.menu-dropdown,
+.submenu-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle::after,
+.submenu-toggle::after {
+  content: " ▾";
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.dropdown-menu,
+.submenu-menu {
+  display: none;
+  position: absolute;
+  min-width: 230px;
+  padding: 12px;
+  background: rgba(4,7,13,.96);
+  border: 1px solid rgba(212,161,31,.22);
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.45);
+  backdrop-filter: blur(14px);
+  z-index: 200;
+}
+
+.dropdown-menu {
+  top: 100%;
+  left: 0;
+}
+
+.submenu-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 10px;
+}
+
+.menu-dropdown:hover > .dropdown-menu,
+.submenu-dropdown:hover > .submenu-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dropdown-menu a,
+.submenu-menu a {
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover,
+.submenu-menu a:hover {
+  background: rgba(212,161,31,.10);
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .nav.open {
+    display: flex;
+  }
+
+  .menu-dropdown,
+  .submenu-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu,
+  .submenu-menu {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 8px 0 0 0;
+    background: rgba(255,255,255,.04);
+    box-shadow: none;
+  }
+
+  .submenu-menu {
+    margin-left: 14px;
+  }
+
+  .page-section {
+    padding-top: 120px;
+  }
+}
