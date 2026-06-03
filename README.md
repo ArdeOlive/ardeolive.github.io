@@ -130,3 +130,9 @@ O menu suspenso foi alterado para ficar em lista vertical:
 ## Ajuste aplicado
 
 - O rodapé da página Personagens foi elevado em 5mm.
+
+
+## Ajuste aplicado
+
+- O submenu **O Arquiteto do Caos** deixou de responder ao clique.
+- Agora ele apenas abre os submenus Livro, Personagens e Galeria ao passar o mouse.
