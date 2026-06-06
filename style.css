@@ -1230,3 +1230,465 @@ body:has(#personagens) .footer {
         left: 0;
     }
 }
+
+
+/* AJUSTE: reduzir 1cm da moldura de texto da página inicial e deixá-la flexível */
+.hero-card {
+  width: calc(100% + 1cm);
+  max-width: calc(100% + 1cm);
+  min-height: auto;
+  height: auto;
+  overflow: visible;
+  justify-content: flex-start;
+  align-self: center;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+.hero-card h2,
+.hero-card p,
+.hero-card .card-label {
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .hero-card {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    height: auto;
+  }
+}
+
+
+/* AJUSTE: mover os menus da página inicial 1,5cm para a esquerda */
+body:has(#inicio) .nav {
+  position: relative;
+  left: -1.5cm;
+}
+
+@media (max-width: 900px) {
+  body:has(#inicio) .nav {
+    left: 0;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE FLUIDA GLOBAL — AJUSTE FINAL
+   Letras, molduras, espaçamentos e imagens escalam conforme a tela.
+   ========================================================= */
+:root {
+  --space-page: clamp(18px, 5vw, 120px);
+  --space-section-y: clamp(78px, 10vw, 170px);
+  --card-padding: clamp(20px, 2.8vw, 44px);
+  --radius-card: clamp(18px, 2vw, 34px);
+  --font-base: clamp(14px, 0.9vw, 18px);
+  --font-small: clamp(10px, 0.75vw, 13px);
+  --font-nav: clamp(13px, 0.78vw, 16px);
+  --font-h1: clamp(38px, 7.2vw, 118px);
+  --font-h2: clamp(28px, 3.8vw, 64px);
+  --font-h3: clamp(18px, 1.45vw, 28px);
+  --font-tagline: clamp(18px, 2.2vw, 38px);
+  --logo-header: clamp(48px, 5vw, 86px);
+  --hero-logo: clamp(96px, 10vw, 190px);
+  --hero-card-min: clamp(250px, 28vw, 430px);
+}
+
+html {
+  font-size: var(--font-base);
+}
+
+body {
+  font-size: var(--font-base);
+  overflow-x: hidden;
+}
+
+.site-header {
+  height: clamp(72px, 7vw, 104px);
+  padding-left: var(--space-page);
+  padding-right: var(--space-page);
+}
+
+.logo img {
+  height: var(--logo-header);
+}
+
+.nav {
+  gap: clamp(12px, 1.8vw, 34px);
+  font-size: var(--font-nav);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.section {
+  padding-left: var(--space-page);
+  padding-right: var(--space-page);
+  padding-top: var(--space-section-y);
+  padding-bottom: var(--space-section-y);
+}
+
+.hero {
+  grid-template-columns: minmax(0, 1.22fr) minmax(280px, .78fr);
+  gap: clamp(26px, 4vw, 74px);
+  min-height: 100svh;
+  padding-top: clamp(118px, 12vw, 190px);
+}
+
+h1 {
+  font-size: var(--font-h1);
+  line-height: .92;
+  letter-spacing: clamp(-5px, -0.35vw, -1px);
+}
+
+h2 {
+  font-size: var(--font-h2);
+  line-height: 1.02;
+  letter-spacing: clamp(-2px, -0.15vw, -0.5px);
+}
+
+h3 {
+  font-size: var(--font-h3);
+}
+
+p {
+  font-size: var(--font-base);
+}
+
+.eyebrow,
+.card-label {
+  font-size: var(--font-small);
+}
+
+.tagline {
+  font-size: var(--font-tagline);
+  max-width: min(820px, 100%);
+}
+
+.hero-card,
+.info-card,
+.book-visuals,
+.gallery-item,
+.author-photo {
+  border-radius: var(--radius-card);
+}
+
+.hero-card {
+  width: clamp(280px, 34vw, 560px);
+  max-width: 100%;
+  min-height: var(--hero-card-min);
+  height: auto;
+  padding: var(--card-padding);
+  justify-content: center;
+  overflow: visible;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.hero-card h2,
+.hero-card p,
+.hero-card .card-label {
+  max-width: 100%;
+}
+
+.hero-book-logo img {
+  width: var(--hero-logo);
+  max-width: 78%;
+}
+
+.two-columns,
+.book-section {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
+  gap: clamp(28px, 4vw, 70px);
+}
+
+.author-photo {
+  width: min(34vw, 415px);
+  height: auto;
+  aspect-ratio: 415 / 623;
+}
+
+.author-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-visuals {
+  min-height: clamp(360px, 44vw, 680px);
+  padding: clamp(18px, 2.4vw, 34px);
+  gap: clamp(12px, 2vw, 28px);
+}
+
+.book-cover img {
+  max-width: clamp(180px, 22vw, 330px);
+}
+
+.book-logo img {
+  max-width: clamp(220px, 28vw, 430px);
+}
+
+.cards-grid,
+.gallery-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(14px, 1.6vw, 28px);
+}
+
+.info-card {
+  padding: clamp(18px, 2vw, 32px);
+}
+
+#personagens .info-card p,
+#autor p,
+.book-text p {
+  font-size: clamp(13px, .86vw, 17px);
+  line-height: clamp(1.55, 1.8vw, 1.8);
+}
+
+.gallery-item {
+  min-height: clamp(190px, 24vw, 340px);
+  padding: clamp(16px, 2vw, 30px);
+}
+
+.gallery-item img {
+  max-width: clamp(210px, 22vw, 340px);
+}
+
+.contact-section {
+  max-width: min(920px, calc(100vw - (var(--space-page) * 2)));
+}
+
+.contact-card {
+  min-width: clamp(130px, 14vw, 180px);
+  min-height: clamp(125px, 14vw, 180px);
+  padding: clamp(14px, 1.5vw, 22px);
+}
+
+.contact-card img,
+.email-card img,
+.tiktok-card img {
+  width: clamp(66px, 6vw, 96px);
+  height: clamp(66px, 6vw, 96px);
+}
+
+.footer {
+  padding: clamp(24px, 3vw, 42px) var(--space-page);
+  font-size: clamp(12px, .8vw, 15px);
+}
+
+/* Telas grandes: aumenta presença visual sem quebrar composição */
+@media (min-width: 1500px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.3fr) minmax(360px, .7fr);
+  }
+
+  .hero-card {
+    width: clamp(420px, 31vw, 620px);
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
+  }
+}
+
+/* Laptops e tablets horizontais */
+@media (max-width: 1200px) {
+  body:has(#inicio) .nav {
+    left: -0.6cm;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(270px, .9fr);
+  }
+
+  .hero-card {
+    width: 100%;
+  }
+}
+
+/* Tablets e celulares: tudo empilha, molduras reduzem e cabem na tela */
+@media (max-width: 900px) {
+  body:has(#inicio) .nav,
+  .hero-card {
+    left: 0;
+  }
+
+  .site-header {
+    height: clamp(68px, 10vw, 82px);
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: clamp(26px, 5vw, 34px);
+  }
+
+  .nav {
+    position: absolute;
+    top: clamp(68px, 10vw, 82px);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: clamp(16px, 4vw, 26px) var(--space-page);
+    background: rgba(4,7,13,.98);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a,
+  .dropdown-toggle,
+  .submenu-toggle {
+    font-size: clamp(14px, 3.5vw, 17px);
+    padding: 10px 0;
+  }
+
+  .dropdown-menu,
+  .submenu-menu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    box-shadow: none;
+  }
+
+  .hero,
+  .two-columns,
+  .book-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    align-items: start;
+    padding-top: clamp(105px, 18vw, 135px);
+  }
+
+  .hero-card {
+    width: min(100%, 620px);
+    min-height: auto;
+    justify-self: stretch;
+  }
+
+  .author-photo {
+    width: min(72vw, 330px);
+  }
+
+  .book-visuals {
+    grid-template-columns: 42% 58%;
+    min-height: auto;
+  }
+}
+
+/* Celulares */
+@media (max-width: 560px) {
+  :root {
+    --space-page: clamp(15px, 5vw, 24px);
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+
+  .section {
+    padding-top: clamp(72px, 18vw, 96px);
+    padding-bottom: clamp(64px, 16vw, 90px);
+  }
+
+  .hero {
+    padding-top: clamp(96px, 24vw, 120px);
+    gap: 24px;
+  }
+
+  h1 {
+    font-size: clamp(34px, 11.5vw, 48px);
+    letter-spacing: -1.5px;
+  }
+
+  h2 {
+    font-size: clamp(27px, 8.5vw, 36px);
+  }
+
+  h3 {
+    font-size: clamp(17px, 5vw, 21px);
+  }
+
+  p,
+  #personagens .info-card p,
+  #autor p,
+  .book-text p {
+    font-size: clamp(13px, 4vw, 15.5px);
+  }
+
+  .tagline {
+    font-size: clamp(18px, 5.8vw, 23px);
+  }
+
+  .hero-card,
+  .info-card,
+  .book-visuals,
+  .gallery-item {
+    padding: clamp(16px, 5vw, 22px);
+    border-radius: 18px;
+  }
+
+  .hero-book-logo img {
+    width: clamp(90px, 34vw, 130px);
+  }
+
+  .book-visuals {
+    grid-template-columns: 1fr;
+  }
+
+  .book-cover img {
+    max-width: min(220px, 62vw);
+  }
+
+  .book-logo img {
+    max-width: min(260px, 76vw);
+  }
+
+  .author-photo {
+    width: min(78vw, 275px);
+  }
+
+  .cards-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .contact-card,
+  .contact-links a {
+    width: min(100%, 320px);
+  }
+
+  .footer {
+    margin-top: 0;
+  }
+
+  body:has(#personagens) .footer {
+    margin-top: 0;
+  }
+}
+
+/* Celulares muito estreitos */
+@media (max-width: 360px) {
+  .hero-card,
+  .info-card,
+  .book-visuals,
+  .gallery-item {
+    padding: 14px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+}

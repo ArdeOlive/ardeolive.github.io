@@ -136,3 +136,10 @@ O menu suspenso foi alterado para ficar em lista vertical:
 
 - O submenu **O Arquiteto do Caos** deixou de responder ao clique.
 - Agora ele apenas abre os submenus Livro, Personagens e Galeria ao passar o mouse.
+
+
+## Ajuste aplicado
+
+- Responsividade global aprimorada com `clamp()`, `auto-fit`, `minmax()` e breakpoints adicionais.
+- Letras, molduras, espaçamentos, logos, cards, imagens e menus agora reduzem automaticamente em telas menores e aumentam proporcionalmente em telas maiores.
+- A página inicial, páginas internas, galeria, personagens, autor, livro e contato foram ajustadas para melhor adaptação em desktop, notebook, tablet e celular.
