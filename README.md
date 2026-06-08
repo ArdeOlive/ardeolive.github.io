@@ -157,3 +157,18 @@ O menu suspenso foi alterado para ficar em lista vertical:
 
 - A moldura de texto da página inicial foi movimentada 0,5cm para a direita.
 - O texto dentro da moldura da página inicial foi centralizado.
+
+
+## Ajuste aplicado
+
+- A página Galeria foi ampliada de 4 para 20 molduras.
+- Foram adicionadas 16 novas molduras abaixo das existentes.
+- Todas as novas molduras usam a imagem `images/midias00.png`.
+
+
+## Ajuste aplicado
+
+- O arquivo `galeria.html` foi substituído pelo arquivo anexado.
+- O site agora reconhece as 20 molduras da Galeria conforme o novo HTML.
+- Foram garantidos os arquivos `midias01.png` até `midias12.png`; quando uma imagem específica não existia, foi usada `midias00.png` como provisória.
+- O `style.css` foi ajustado para manter todas as molduras responsivas.

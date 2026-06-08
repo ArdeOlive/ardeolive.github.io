@@ -1711,3 +1711,29 @@ body:has(#inicio) .hero-card .card-label {
     left: 0;
   }
 }
+
+
+/* GALERIA — 20 MOLDURAS CONFORME galeria.html */
+#galeria .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(18px, 2vw, 30px);
+  align-items: stretch;
+}
+
+#galeria .gallery-item {
+  min-height: clamp(240px, 28vw, 420px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(18px, 2vw, 30px);
+  overflow: hidden;
+}
+
+#galeria .gallery-item img {
+  width: 100%;
+  max-width: clamp(220px, 22vw, 340px);
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
