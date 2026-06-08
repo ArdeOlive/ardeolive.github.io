@@ -172,3 +172,10 @@ O menu suspenso foi alterado para ficar em lista vertical:
 - O site agora reconhece as 20 molduras da Galeria conforme o novo HTML.
 - Foram garantidos os arquivos `midias01.png` até `midias12.png`; quando uma imagem específica não existia, foi usada `midias00.png` como provisória.
 - O `style.css` foi ajustado para manter todas as molduras responsivas.
+
+
+## Ajuste aplicado
+
+- Foram adicionadas 4 novas molduras na página Galeria.
+- A galeria passou a ter 24 molduras no total.
+- As novas molduras mantêm a classe `.gallery-item` e todas as configurações visuais já existentes.
