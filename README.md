@@ -143,3 +143,11 @@ O menu suspenso foi alterado para ficar em lista vertical:
 - Responsividade global aprimorada com `clamp()`, `auto-fit`, `minmax()` e breakpoints adicionais.
 - Letras, molduras, espaçamentos, logos, cards, imagens e menus agora reduzem automaticamente em telas menores e aumentam proporcionalmente em telas maiores.
 - A página inicial, páginas internas, galeria, personagens, autor, livro e contato foram ajustadas para melhor adaptação em desktop, notebook, tablet e celular.
+
+
+## Ajuste aplicado
+
+- Criada a página `capitulo1.html`.
+- Adicionado o submenu **1º Capítulo** abaixo de **Galeria**.
+- Inserida a imagem `images/capitulo01.png` em 14cm x 21cm.
+- Inserido o texto completo do capítulo abaixo da imagem.
