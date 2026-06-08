@@ -1219,17 +1219,7 @@ body:has(#personagens) .footer {
 
 
 
-/* AJUSTE: mover moldura de texto da página inicial 4cm para a esquerda */
-.hero-card{
-    position: relative;
-    left: -4cm;
-}
 
-@media (max-width: 900px){
-    .hero-card{
-        left: 0;
-    }
-}
 
 
 /* AJUSTE: reduzir 1cm da moldura de texto da página inicial e deixá-la flexível */
@@ -1700,3 +1690,24 @@ p {
 .capitulo-texto{max-width:850px;margin:0 auto;padding:clamp(22px,3vw,42px);border-radius:24px;background:linear-gradient(145deg,rgba(7,10,18,.72),rgba(7,10,18,.48)),linear-gradient(145deg,rgba(212,161,31,.08),rgba(255,255,255,.02));border:1px solid rgba(212,161,31,.16);box-shadow:var(--shadow);}
 .capitulo-texto p{text-align:justify;text-justify:inter-word;line-height:1.9;color:var(--muted);margin-bottom:16px;}
 @media(max-width:768px){.capitulo-imagem img{width:min(92vw,14cm);height:auto;aspect-ratio:14/21}.capitulo-texto{padding:20px}.capitulo-texto p{font-size:14px;line-height:1.75}}
+
+
+/* AJUSTE FINAL — MOLDURA DA PÁGINA INICIAL */
+body:has(#inicio) .hero-card {
+  position: relative;
+  left: 0.5cm;
+  text-align: center;
+  align-items: center;
+}
+
+body:has(#inicio) .hero-card h2,
+body:has(#inicio) .hero-card p,
+body:has(#inicio) .hero-card .card-label {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  body:has(#inicio) .hero-card {
+    left: 0;
+  }
+}

@@ -151,3 +151,9 @@ O menu suspenso foi alterado para ficar em lista vertical:
 - Adicionado o submenu **1º Capítulo** abaixo de **Galeria**.
 - Inserida a imagem `images/capitulo01.png` em 14cm x 21cm.
 - Inserido o texto completo do capítulo abaixo da imagem.
+
+
+## Ajuste aplicado
+
+- A moldura de texto da página inicial foi movimentada 0,5cm para a direita.
+- O texto dentro da moldura da página inicial foi centralizado.
