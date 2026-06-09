@@ -1251,7 +1251,17 @@ body:has(#personagens) .footer {
 }
 
 
+/* AJUSTE: mover os menus da página inicial 1,5cm para a esquerda */
+body:has(#inicio) .nav {
+  position: relative;
+  left: -1.5cm;
+}
 
+@media (max-width: 900px) {
+  body:has(#inicio) .nav {
+    left: 0;
+  }
+}
 
 
 /* =========================================================
@@ -1791,14 +1801,56 @@ body:has(#autor) .author-photo img,
 }
 
 
-/* AJUSTE GLOBAL — MENUS NA MESMA POSIÇÃO DA PÁGINA INDEX */
-.site-header .nav {
-  position: relative;
-  left: -1.5cm;
+/* AJUSTE FINAL — FOTO DO AUTOR RESPONSIVA E ENCAIXADA NA MOLDURA */
+body:has(#autor) .author-photo {
+  width: min(100%, 720px) !important;
+  max-width: 720px !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: clamp(16px, 2vw, 28px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body:has(#autor) .author-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+body:has(#autor) .two-columns {
+  grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr) !important;
+  align-items: center !important;
+}
+
+@media (max-width: 1200px) {
+  body:has(#autor) .author-photo {
+    width: min(100%, 640px) !important;
+  }
 }
 
 @media (max-width: 900px) {
-  .site-header .nav {
-    left: 0;
+  body:has(#autor) .two-columns {
+    grid-template-columns: 1fr !important;
+  }
+
+  body:has(#autor) .author-photo {
+    width: min(100%, 680px) !important;
+    max-width: 680px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  body:has(#autor) .author-photo {
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    border-radius: 18px !important;
   }
 }
