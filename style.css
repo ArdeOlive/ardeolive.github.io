@@ -1692,25 +1692,7 @@ p {
 @media(max-width:768px){.capitulo-imagem img{width:min(92vw,14cm);height:auto;aspect-ratio:14/21}.capitulo-texto{padding:20px}.capitulo-texto p{font-size:14px;line-height:1.75}}
 
 
-/* AJUSTE FINAL — MOLDURA DA PÁGINA INICIAL */
-body:has(#inicio) .hero-card {
-  position: relative;
-  left: 0.5cm;
-  text-align: center;
-  align-items: center;
-}
 
-body:has(#inicio) .hero-card h2,
-body:has(#inicio) .hero-card p,
-body:has(#inicio) .hero-card .card-label {
-  text-align: center;
-}
-
-@media (max-width: 900px) {
-  body:has(#inicio) .hero-card {
-    left: 0;
-  }
-}
 
 
 /* GALERIA — 20 MOLDURAS CONFORME galeria.html */
@@ -1736,4 +1718,84 @@ body:has(#inicio) .hero-card .card-label {
   height: auto;
   display: block;
   object-fit: contain;
+}
+
+
+/* AJUSTE FINAL — MOLDURA DA PÁGINA INICIAL 1,5CM À DIREITA */
+body:has(#inicio) .hero-card {
+  position: relative;
+  left: 1.5cm;
+  text-align: center;
+  align-items: center;
+}
+
+body:has(#inicio) .hero-card h2,
+body:has(#inicio) .hero-card p,
+body:has(#inicio) .hero-card .card-label {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  body:has(#inicio) .hero-card {
+    left: 0;
+  }
+}
+
+
+/* =========================================================
+   AJUSTE FINAL — FOTO DO AUTOR HORIZONTAL 16,5 x 11 cm
+   Mantém a moldura existente, agora em proporção horizontal.
+   ========================================================= */
+body:has(#autor) .author-photo,
+.author-photo {
+  width: min(16.5cm, 100%);
+  height: auto;
+  aspect-ratio: 16.5 / 11;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-card, 18px);
+  background:
+    linear-gradient(145deg, rgba(7,10,18,.72), rgba(7,10,18,.48)),
+    linear-gradient(145deg, rgba(212,161,31,.08), rgba(255,255,255,.02));
+  border: 1px solid rgba(212,161,31,.16);
+  box-shadow: 0 24px 80px rgba(0,0,0,.42);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body:has(#autor) .author-photo img,
+.author-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media (min-width: 1500px) {
+  body:has(#autor) .author-photo,
+  .author-photo {
+    width: min(18.5cm, 48vw);
+  }
+}
+
+@media (max-width: 900px) {
+  body:has(#autor) .author-photo,
+  .author-photo {
+    width: min(92vw, 16.5cm);
+    height: auto;
+    aspect-ratio: 16.5 / 11;
+  }
+}
+
+@media (max-width: 520px) {
+  body:has(#autor) .author-photo,
+  .author-photo {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16.5 / 11;
+  }
 }
