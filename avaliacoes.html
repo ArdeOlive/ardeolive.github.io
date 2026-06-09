@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avaliações | O Arquiteto do Caos</title>
+  <meta name="description" content="Avaliações dos leitores do livro O Arquiteto do Caos." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Voltar ao início"><img src="images/logo.png" alt="Arnaldo de Oliveira" /></a>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <a href="autor.html">Autor</a>
+      <div class="menu-dropdown">
+        <a href="#" class="dropdown-toggle">Livros</a>
+        <div class="dropdown-menu">
+          <div class="submenu-dropdown">
+            <span class="submenu-toggle">O Arquiteto do Caos</span>
+            <div class="submenu-menu">
+              <a href="livro.html">Livro</a>
+              <a href="personagens.html">Personagens</a>
+              <a href="galeria.html">Galeria</a>
+              <a href="avaliacoes.html">Avaliações</a>
+              <a href="capitulo1.html">1º Capítulo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+  <main>
+    <section id="avaliacoes" class="section page-section reviews-section">
+      <p class="eyebrow">Opinião dos leitores</p>
+      <h2>Avaliações</h2>
+      <div class="reviews-layout">
+        <aside class="reviews-summary info-card">
+          <h3>Resumo das avaliações</h3>
+          <div class="score-box"><strong id="averageRating">0.0</strong><span id="averageStars">☆☆☆☆☆</span><small><span id="totalReviews">0</span> avaliações até o momento</small></div>
+          <div class="rating-bars">
+            <div class="rating-row"><span>5 Excelente</span><progress id="bar5" value="0" max="1"></progress><strong id="count5">0</strong></div>
+            <div class="rating-row"><span>4 Bom</span><progress id="bar4" value="0" max="1"></progress><strong id="count4">0</strong></div>
+            <div class="rating-row"><span>3 Regular</span><progress id="bar3" value="0" max="1"></progress><strong id="count3">0</strong></div>
+            <div class="rating-row"><span>2 Ruim</span><progress id="bar2" value="0" max="1"></progress><strong id="count2">0</strong></div>
+            <div class="rating-row"><span>1 Péssimo</span><progress id="bar1" value="0" max="1"></progress><strong id="count1">0</strong></div>
+          </div>
+        </aside>
+        <section class="review-form-panel info-card">
+          <h3>O que você achou do Livro?</h3>
+          <p class="review-product-name">O ARQUITETO DO CAOS</p>
+          <form id="reviewForm" class="review-form">
+            <fieldset class="star-field"><legend>Classifique de 1 a 5 estrelas</legend>
+              <div class="star-options">
+                <label><input type="radio" name="rating" value="1" required><span>★</span><small>1 Péssimo</small></label>
+                <label><input type="radio" name="rating" value="2"><span>★</span><small>2 Ruim</small></label>
+                <label><input type="radio" name="rating" value="3"><span>★</span><small>3 Regular</small></label>
+                <label><input type="radio" name="rating" value="4"><span>★</span><small>4 Bom</small></label>
+                <label><input type="radio" name="rating" value="5"><span>★</span><small>5 Excelente</small></label>
+              </div>
+            </fieldset>
+            <label class="details-label" for="reviewText">Dê mais detalhes sobre o Livro</label>
+            <textarea id="reviewText" name="reviewText" rows="7" maxlength="1200" placeholder="Escreva sua opinião sobre o livro..." required></textarea>
+            <button class="btn primary review-submit" type="submit">Enviar avaliação</button>
+          </form>
+        </section>
+      </div>
+      <section class="reviews-list-panel"><h3>Opinião dos leitores</h3><div id="reviewsList" class="reviews-list"></div></section>
+    </section>
+  </main>
+  <footer class="footer"><p>© <span id="year"></span> Arnaldo de Oliveira. Todos os direitos reservados.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
