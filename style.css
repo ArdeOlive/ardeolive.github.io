@@ -1692,25 +1692,7 @@ p {
 @media(max-width:768px){.capitulo-imagem img{width:min(92vw,14cm);height:auto;aspect-ratio:14/21}.capitulo-texto{padding:20px}.capitulo-texto p{font-size:14px;line-height:1.75}}
 
 
-/* AJUSTE FINAL — MOLDURA DA PÁGINA INICIAL */
-body:has(#inicio) .hero-card {
-  position: relative;
-  left: 0.5cm;
-  text-align: center;
-  align-items: center;
-}
 
-body:has(#inicio) .hero-card h2,
-body:has(#inicio) .hero-card p,
-body:has(#inicio) .hero-card .card-label {
-  text-align: center;
-}
-
-@media (max-width: 900px) {
-  body:has(#inicio) .hero-card {
-    left: 0;
-  }
-}
 
 
 /* GALERIA — 20 MOLDURAS CONFORME galeria.html */
@@ -1736,4 +1718,25 @@ body:has(#inicio) .hero-card .card-label {
   height: auto;
   display: block;
   object-fit: contain;
+}
+
+
+/* AJUSTE FINAL — MOLDURA DA PÁGINA INICIAL 1,5CM À DIREITA */
+body:has(#inicio) .hero-card {
+  position: relative;
+  left: 1.5cm;
+  text-align: center;
+  align-items: center;
+}
+
+body:has(#inicio) .hero-card h2,
+body:has(#inicio) .hero-card p,
+body:has(#inicio) .hero-card .card-label {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  body:has(#inicio) .hero-card {
+    left: 0;
+  }
 }
