@@ -20,4 +20,47 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-(function(){const f=document.querySelector("#reviewForm"),list=document.querySelector("#reviewsList");if(!f||!list)return;const key="avaliacoes_o_arquiteto_do_caos_v1",labels={1:"Péssimo",2:"Ruim",3:"Regular",4:"Bom",5:"Excelente"},seed=[{id:"seed-1",rating:5,text:"Narrativa intensa, sombria e muito visual. A proposta prende pela atmosfera investigativa e pela sensação de que cada detalhe foi colocado no lugar certo.",likes:0,dislikes:0,reply:""},{id:"seed-2",rating:4,text:"A premissa é forte e desperta curiosidade. O clima de São Paulo como tabuleiro de investigação combina muito bem com a ideia do livro.",likes:0,dislikes:0,reply:""},{id:"seed-3",rating:5,text:"A protagonista transmite inteligência e frieza. Dá vontade de acompanhar até onde esse jogo vai chegar.",likes:0,dislikes:0,reply:""}];function load(){let r=localStorage.getItem(key);if(!r){localStorage.setItem(key,JSON.stringify(seed));return [...seed]}try{return JSON.parse(r)}catch{localStorage.setItem(key,JSON.stringify(seed));return [...seed]}}function save(r){localStorage.setItem(key,JSON.stringify(r))}function stars(n){return"★".repeat(n)+"☆".repeat(5-n)}function esc(v){return String(v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}function summary(r){let total=r.length,c={1:0,2:0,3:0,4:0,5:0};r.forEach(x=>c[x.rating]++);let avg=total?r.reduce((s,x)=>s+x.rating,0)/total:0;document.querySelector("#totalReviews").textContent=total;document.querySelector("#averageRating").textContent=avg.toFixed(1);document.querySelector("#averageStars").textContent=stars(Math.round(avg||0));for(let i=1;i<=5;i++){document.querySelector("#count"+i).textContent=c[i];let b=document.querySelector("#bar"+i);b.max=total||1;b.value=c[i]}}function render(){let r=load();summary(r);list.innerHTML=r.length?r.map(x=>`<article class="review-card" data-review-id="${x.id}"><div class="review-head"><div><div class="review-stars">${stars(x.rating)}</div><span class="review-rating-label">${x.rating} — ${labels[x.rating]}</span></div></div><p class="review-text">${esc(x.text)}</p>${x.reply?`<div class="author-reply"><strong>Resposta do autor</strong><p>${esc(x.reply)}</p></div>`:""}<div class="review-actions"><button class="vote-btn like-btn" type="button">👍 <span>${x.likes||0}</span></button><button class="vote-btn dislike-btn" type="button">👎 <span>${x.dislikes||0}</span></button><button class="reply-toggle" type="button">Responder como autor</button></div><div class="reply-box"><textarea rows="4" placeholder="Escreva a réplica do autor...">${x.reply?esc(x.reply):""}</textarea><button class="reply-save" type="button">Salvar réplica</button></div></article>`).join(""):'<div class="no-reviews">Ainda não há avaliações. Seja o primeiro leitor a opinar.</div>'}f.addEventListener("submit",e=>{e.preventDefault();let d=new FormData(f),rating=Number(d.get("rating")),text=String(d.get("reviewText")||"").trim();if(!rating||!text)return;let r=load();r.unshift({id:"review-"+Date.now(),rating,text,likes:0,dislikes:0,reply:""});save(r);f.reset();render()});list.addEventListener("click",e=>{let card=e.target.closest(".review-card");if(!card)return;let r=load(),x=r.find(i=>i.id===card.dataset.reviewId);if(!x)return;if(e.target.closest(".like-btn")){x.likes=(x.likes||0)+1;save(r);render()}if(e.target.closest(".dislike-btn")){x.dislikes=(x.dislikes||0)+1;save(r);render()}if(e.target.closest(".reply-toggle"))card.querySelector(".reply-box").classList.toggle("open");if(e.target.closest(".reply-save")){x.reply=(card.querySelector(".reply-box textarea")?.value||"").trim();save(r);render()}});render()})();
+/* =========================================================
+   AVALIAÇÕES — O ARQUITETO DO CAOS
+   Inicia do zero e salva novas avaliações no navegador via localStorage.
+   ========================================================= */
+(function(){
+  const form=document.querySelector("#reviewForm");
+  const reviewsList=document.querySelector("#reviewsList");
+  if(!form||!reviewsList)return;
+  const storageKey="avaliacoes_o_arquiteto_do_caos_v2_zero";
+  const labels={1:"Péssimo",2:"Ruim",3:"Regular",4:"Bom",5:"Excelente"};
+  function load(){
+    const raw=localStorage.getItem(storageKey);
+    if(!raw)return [];
+    try{const parsed=JSON.parse(raw);return Array.isArray(parsed)?parsed:[]}catch{return []}
+  }
+  function save(reviews){localStorage.setItem(storageKey,JSON.stringify(reviews))}
+  function stars(n){return "★".repeat(n)+"☆".repeat(5-n)}
+  function esc(v){return String(v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
+  function summary(reviews){
+    const total=reviews.length; const counts={1:0,2:0,3:0,4:0,5:0};
+    reviews.forEach(r=>{if(counts[r.rating]!==undefined)counts[r.rating]++});
+    const avg=total?reviews.reduce((s,r)=>s+Number(r.rating||0),0)/total:0;
+    const totalEl=document.querySelector("#totalReviews"), avgEl=document.querySelector("#averageRating"), avgStars=document.querySelector("#averageStars");
+    if(totalEl)totalEl.textContent=total; if(avgEl)avgEl.textContent=avg.toFixed(1); if(avgStars)avgStars.textContent=stars(Math.round(avg||0));
+    for(let i=1;i<=5;i++){const c=document.querySelector("#count"+i), b=document.querySelector("#bar"+i); if(c)c.textContent=counts[i]; if(b){b.max=total||1;b.value=counts[i]}}
+  }
+  function render(){
+    const reviews=load(); summary(reviews);
+    if(!reviews.length){reviewsList.innerHTML='<div class="no-reviews">Ainda não há avaliações. Seja o primeiro leitor a opinar.</div>';return}
+    reviewsList.innerHTML=reviews.map(r=>`<article class="review-card" data-review-id="${r.id}"><div class="review-head"><div><div class="review-author-name">Avaliador: <span>${esc(r.name||"Leitor")}</span></div><div class="review-stars">${stars(Number(r.rating))}</div><span class="review-rating-label">${r.rating} — ${labels[r.rating]}</span></div></div><p class="review-text">${esc(r.text)}</p>${r.reply?`<div class="author-reply"><strong>Resposta do autor</strong><p>${esc(r.reply)}</p></div>`:""}<div class="review-actions"><button class="vote-btn like-btn" type="button">👍 <span>${r.likes||0}</span></button><button class="vote-btn dislike-btn" type="button">👎 <span>${r.dislikes||0}</span></button><button class="reply-toggle" type="button">Responder como autor</button></div><div class="reply-box"><textarea rows="4" placeholder="Escreva a réplica do autor...">${r.reply?esc(r.reply):""}</textarea><button class="reply-save" type="button">Salvar réplica</button></div></article>`).join("");
+  }
+  form.addEventListener("submit",e=>{
+    e.preventDefault(); const data=new FormData(form); const rating=Number(data.get("rating")); const name=String(data.get("reviewerName")||"").trim(); const text=String(data.get("reviewText")||"").trim();
+    if(!rating||!name||!text)return; const reviews=load(); reviews.unshift({id:"review-"+Date.now(),name,rating,text,likes:0,dislikes:0,reply:""}); save(reviews); form.reset(); render();
+  });
+  reviewsList.addEventListener("click",e=>{
+    const card=e.target.closest(".review-card"); if(!card)return; const reviews=load(); const review=reviews.find(x=>x.id===card.dataset.reviewId); if(!review)return;
+    if(e.target.closest(".like-btn")){review.likes=(review.likes||0)+1; save(reviews); render(); return}
+    if(e.target.closest(".dislike-btn")){review.dislikes=(review.dislikes||0)+1; save(reviews); render(); return}
+    if(e.target.closest(".reply-toggle")){const box=card.querySelector(".reply-box"); if(box)box.classList.toggle("open"); return}
+    if(e.target.closest(".reply-save")){const ta=card.querySelector(".reply-box textarea"); review.reply=ta?ta.value.trim():""; save(reviews); render()}
+  });
+  render();
+})();
