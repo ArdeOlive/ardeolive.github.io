@@ -1825,3 +1825,54 @@ body:has(#autor) .author-photo img,
     left: 0;
   }
 }
+
+
+/* AJUSTE FINAL — BLOQUEIO DA PÁGINA AVALIAÇÕES */
+.gated-disabled {
+  opacity: .52;
+  cursor: not-allowed !important;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 6000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0,0,0,.72);
+  backdrop-filter: blur(7px);
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-box {
+  width: min(92vw, 520px);
+  padding: 30px;
+  border: 1px solid rgba(212,161,31,.34);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(7,10,18,.98), rgba(18,20,28,.96));
+  box-shadow: 0 30px 90px rgba(0,0,0,.68);
+  color: var(--text);
+  text-align: center;
+}
+
+.warning-box p {
+  font-weight: 900;
+  letter-spacing: .03em;
+  margin-bottom: 20px;
+}
+
+.warning-box button {
+  min-width: 120px;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 26px;
+  background: var(--accent);
+  color: #080808;
+  font-weight: 900;
+  cursor: pointer;
+}
