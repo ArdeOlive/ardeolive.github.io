@@ -1872,3 +1872,31 @@ body:has(#autor) .author-photo img,
 .review-read-status span {
   color: var(--accent);
 }
+
+
+/* AJUSTE MENU LIVROS — SUBMENU INTERNO CENTRALIZADO */
+.site-header .dropdown-menu .submenu-dropdown {
+  align-items: center;
+}
+
+.site-header .dropdown-menu .submenu-toggle {
+  width: 100%;
+  text-align: center;
+}
+
+.site-header .dropdown-menu .submenu-menu {
+  width: calc(100% - 24px);
+  margin: 8px auto 0 auto;
+  align-self: center;
+}
+
+.site-header .dropdown-menu .submenu-menu a {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .site-header .dropdown-menu .submenu-menu {
+    width: calc(100% - 14px);
+    margin: 8px auto 0 auto;
+  }
+}
