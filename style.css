@@ -1845,3 +1845,30 @@ body:has(#autor) .author-photo img,
   font-size: 18px;
   min-height: 50px;
 }
+
+
+/* AJUSTE FINAL — COR DA LISTA SUSPENSA EM AVALIAÇÕES */
+#avaliacoes .read-status-row label,
+#avaliacoes .read-status-row select,
+#avaliacoes .read-status-row select option {
+  color: #080808;
+}
+
+#avaliacoes .read-status-row label {
+  font-weight: 900;
+}
+
+#avaliacoes .read-status-row select {
+  font-weight: 900;
+}
+
+
+.review-read-status {
+  color: var(--muted);
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.review-read-status span {
+  color: var(--accent);
+}
