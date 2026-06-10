@@ -53,16 +53,8 @@
           <h3>O que você achou do Livro?</h3>
           <p class="review-product-name">O ARQUITETO DO CAOS</p>
           <form id="reviewForm" class="review-form">
-            <fieldset class="star-field"><legend>Classifique de 1 a 5 estrelas</legend>
-              <div class="star-options">
-                <label><input class="gated-field"  type="radio" name="rating" value="1" required><span>★</span><small>1 Péssimo</small></label>
-                <label><input class="gated-field"  type="radio" name="rating" value="2"><span>★</span><small>2 Ruim</small></label>
-                <label><input class="gated-field"  type="radio" name="rating" value="3"><span>★</span><small>3 Regular</small></label>
-                <label><input class="gated-field"  type="radio" name="rating" value="4"><span>★</span><small>4 Bom</small></label>
-                <label><input class="gated-field"  type="radio" name="rating" value="5"><span>★</span><small>5 Excelente</small></label>
-              </div>
-            </fieldset>
-            <div class="read-status-row read-status-below-stars">
+            
+            <div class="read-status-row read-status-below-title">
               <label for="readStatus">O que você já leu:</label>
               <select id="readStatus" name="readStatus" required>
                 <option value="">Selecione</option>
@@ -70,12 +62,20 @@
                 <option value="Livro Completo">Livro Completo</option>
               </select>
             </div>
-
-            <label class="details-label" for="reviewText">Dê mais detalhes sobre o Livro</label>
-            <textarea class="gated-field"  id="reviewText" name="reviewText" rows="7" maxlength="1200" placeholder="Escreva sua opinião sobre o livro..." required></textarea>
+<fieldset class="star-field"><legend>Classifique de 1 a 5 estrelas</legend>
+              <div class="star-options">
+                <label><input type="radio" name="rating" value="1" required><span>★</span><small>1 Péssimo</small></label>
+                <label><input type="radio" name="rating" value="2"><span>★</span><small>2 Ruim</small></label>
+                <label><input type="radio" name="rating" value="3"><span>★</span><small>3 Regular</small></label>
+                <label><input type="radio" name="rating" value="4"><span>★</span><small>4 Bom</small></label>
+                <label><input type="radio" name="rating" value="5"><span>★</span><small>5 Excelente</small></label>
+              </div>
+            </fieldset>
+<label class="details-label" for="reviewText">Dê mais detalhes sobre o Livro</label>
+            <textarea id="reviewText" name="reviewText" rows="7" maxlength="1200" placeholder="Escreva sua opinião sobre o livro..." required></textarea>
             <label class="details-label" for="reviewerName">Nome do avaliador</label>
-            <input id="reviewerName" name="reviewerName" class="review-name-input gated-field" type="text" maxlength="80" placeholder="Digite seu nome" required />
-            <button class="btn primary review-submit gated-field" type="submit">Enviar avaliação</button>
+            <input id="reviewerName" name="reviewerName" class="review-name-input" type="text" maxlength="80" placeholder="Digite seu nome" required />
+            <button class="btn primary review-submit" type="submit">Enviar avaliação</button>
           </form>
         </section>
       </div>
@@ -83,14 +83,6 @@
     </section>
   </main>
   <footer class="footer"><p>© <span id="year"></span> Arnaldo de Oliveira. Todos os direitos reservados.</p></footer>
-
-  <div id="readWarningModal" class="modal-overlay" aria-hidden="true">
-    <div class="modal-box warning-box" role="dialog" aria-modal="true">
-      <p>Selecione uma das opções na lista O QUE VOCÊ JÁ LEU.</p>
-      <button id="readWarningOk" type="button">OK</button>
-    </div>
-  </div>
-
   <script src="script.js"></script>
 </body>
 </html>
