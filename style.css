@@ -1900,3 +1900,11 @@ body:has(#autor) .author-photo img,
     margin: 8px auto 0 auto;
   }
 }
+
+
+/* AJUSTE FINAL — COR DA FRASE "O QUE VOCÊ JÁ LEU" EM AVALIAÇÕES */
+#avaliacoes .read-status-row label {
+  color: var(--text);
+  font-weight: 900;
+  font-size: 18px;
+}
