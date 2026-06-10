@@ -1251,17 +1251,7 @@ body:has(#personagens) .footer {
 }
 
 
-/* AJUSTE: mover os menus da página inicial 1,5cm para a esquerda */
-body:has(#inicio) .nav {
-  position: relative;
-  left: -1.5cm;
-}
 
-@media (max-width: 900px) {
-  body:has(#inicio) .nav {
-    left: 0;
-  }
-}
 
 
 /* =========================================================
@@ -1821,4 +1811,17 @@ body:has(#autor) .author-photo img,
 
 .read-status-row select {
   min-height: 50px;
+}
+
+
+/* AJUSTE GLOBAL — MENUS SUPERIORES ALINHADOS AO INDEX */
+.site-header .nav {
+  position: relative;
+  left: -1.5cm;
+}
+
+@media (max-width: 900px) {
+  .site-header .nav {
+    left: 0;
+  }
 }
