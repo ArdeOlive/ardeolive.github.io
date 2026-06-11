@@ -23,7 +23,6 @@ if (year) {
 /* =========================================================
    AVALIAÇÕES — O ARQUITETO DO CAOS
    Inicia do zero e salva novas avaliações no navegador via localStorage.
-   Inclui a resposta da lista suspensa "O que você já leu".
    ========================================================= */
 (function(){
   const form=document.querySelector("#reviewForm");
@@ -50,30 +49,18 @@ if (year) {
   function render(){
     const reviews=load(); summary(reviews);
     if(!reviews.length){reviewsList.innerHTML='<div class="no-reviews">Ainda não há avaliações. Seja o primeiro leitor a opinar.</div>';return}
-    reviewsList.innerHTML=reviews.map(r=>`<article class="review-card" data-review-id="${r.id}"><div class="review-head"><div><div class="review-author-name">Avaliador: <span>${esc(r.name||"Leitor")}</span></div><div class="review-read-status">O que já leu: <span>${esc(r.readStatus||r.read||"Não informado")}</span></div><div class="review-stars">${stars(Number(r.rating))}</div><span class="review-rating-label">${r.rating} — ${labels[r.rating]}</span></div></div><p class="review-text">${esc(r.text)}</p>${r.reply?`<div class="author-reply"><strong>Resposta do autor</strong><p>${esc(r.reply)}</p></div>`:""}<div class="review-actions"><button class="vote-btn like-btn" type="button">👍 <span>${r.likes||0}</span></button><button class="vote-btn dislike-btn" type="button">👎 <span>${r.dislikes||0}</span></button><button class="reply-toggle" type="button">Responder como autor</button></div><div class="reply-box"><textarea rows="4" placeholder="Escreva a réplica do autor...">${r.reply?esc(r.reply):""}</textarea><button class="reply-save" type="button">Salvar réplica</button></div></article>`).join("");
+    reviewsList.innerHTML=reviews.map(r=>`<article class="review-card" data-review-id="${r.id}"><div class="review-head"><div><div class="review-author-name">Avaliador: <span>${esc(r.name||"Leitor")}</span></div><div class="review-stars">${stars(Number(r.rating))}</div><span class="review-rating-label">${r.rating} — ${labels[r.rating]}</span></div></div><p class="review-text">${esc(r.text)}</p>${r.reply?`<div class="author-reply"><strong>Resposta do autor</strong><p>${esc(r.reply)}</p></div>`:""}<div class="review-actions"><button class="vote-btn like-btn" type="button">👍 <span>${r.likes||0}</span></button><button class="vote-btn dislike-btn" type="button">👎 <span>${r.dislikes||0}</span></button><button class="reply-toggle" type="button">Responder como autor</button></div><div class="reply-box"><textarea rows="4" placeholder="Escreva a réplica do autor...">${r.reply?esc(r.reply):""}</textarea><button class="reply-save" type="button">Salvar réplica</button></div></article>`).join("");
   }
   form.addEventListener("submit",e=>{
-    e.preventDefault();
-    const data=new FormData(form);
-    const readStatus=String(data.get("readStatus")||"").trim();
-    const rating=Number(data.get("rating"));
-    const name=String(data.get("reviewerName")||"").trim();
-    const text=String(data.get("reviewText")||"").trim();
-    if(!readStatus||!rating||!name||!text)return;
-    const reviews=load();
-    reviews.unshift({id:"review-"+Date.now(),readStatus,name,rating,text,likes:0,dislikes:0,reply:""});
-    save(reviews);
-    form.reset();
-    render();
+    e.preventDefault(); const data=new FormData(form); const rating=Number(data.get("rating")); const name=String(data.get("reviewerName")||"").trim(); const text=String(data.get("reviewText")||"").trim();
+    if(!rating||!name||!text)return; const reviews=load(); reviews.unshift({id:"review-"+Date.now(),name,rating,text,likes:0,dislikes:0,reply:""}); save(reviews); form.reset(); render();
   });
   reviewsList.addEventListener("click",e=>{
-    const card=e.target.closest(".review-card"); if(!card)return;
-    const reviews=load(); const review=reviews.find(r=>r.id===card.dataset.reviewId); if(!review)return;
-    if(e.target.closest(".like-btn")){review.likes=(review.likes||0)+1;save(reviews);render();return}
-    if(e.target.closest(".dislike-btn")){review.dislikes=(review.dislikes||0)+1;save(reviews);render();return}
-    if(e.target.closest(".reply-toggle")){const box=card.querySelector(".reply-box");if(box)box.classList.toggle("open");return}
-    if(e.target.closest(".reply-save")){const t=card.querySelector(".reply-box textarea");review.reply=t?t.value.trim():"";save(reviews);render();}
+    const card=e.target.closest(".review-card"); if(!card)return; const reviews=load(); const review=reviews.find(x=>x.id===card.dataset.reviewId); if(!review)return;
+    if(e.target.closest(".like-btn")){review.likes=(review.likes||0)+1; save(reviews); render(); return}
+    if(e.target.closest(".dislike-btn")){review.dislikes=(review.dislikes||0)+1; save(reviews); render(); return}
+    if(e.target.closest(".reply-toggle")){const box=card.querySelector(".reply-box"); if(box)box.classList.toggle("open"); return}
+    if(e.target.closest(".reply-save")){const ta=card.querySelector(".reply-box textarea"); review.reply=ta?ta.value.trim():""; save(reviews); render()}
   });
   render();
 })();
-
