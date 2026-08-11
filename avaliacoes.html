@@ -25,7 +25,6 @@
               <a href="personagens.html">Personagens</a>
               <a href="galeria.html">Galeria</a>
               <a href="capitulo1.html">1º Capítulo</a>
-              <a href="avaliacoes.html">Avaliações</a>
             </div>
           </div>
         </div>
@@ -53,7 +52,16 @@
           <h3>O que você achou do Livro?</h3>
           <p class="review-product-name">O ARQUITETO DO CAOS</p>
           <form id="reviewForm" class="review-form">
-            <fieldset class="star-field"><legend>Classifique de 1 a 5 estrelas</legend>
+            
+            <div class="read-status-row read-status-below-title">
+              <label for="readStatus">O que você já leu:</label>
+              <select id="readStatus" name="readStatus" required>
+                <option value="">Selecione</option>
+                <option value="1º Capítulo">1º Capítulo</option>
+                <option value="Livro Completo">Livro Completo</option>
+              </select>
+            </div>
+<fieldset class="star-field"><legend>Classifique de 1 a 5 estrelas</legend>
               <div class="star-options">
                 <label><input type="radio" name="rating" value="1" required><span>★</span><small>1 Péssimo</small></label>
                 <label><input type="radio" name="rating" value="2"><span>★</span><small>2 Ruim</small></label>
@@ -62,16 +70,7 @@
                 <label><input type="radio" name="rating" value="5"><span>★</span><small>5 Excelente</small></label>
               </div>
             </fieldset>
-            <div class="read-status-row read-status-below-stars">
-              <label for="readStatus">O que você já leu:</label>
-              <select id="readStatus" name="readStatus" required>
-                <option value="">Selecione</option>
-                <option value="1º Capítulo">1º Capítulo</option>
-                <option value="Livro Completo">Livro Completo</option>
-              </select>
-            </div>
-
-            <label class="details-label" for="reviewText">Dê mais detalhes sobre o Livro</label>
+<label class="details-label" for="reviewText">Dê mais detalhes sobre o Livro</label>
             <textarea id="reviewText" name="reviewText" rows="7" maxlength="1200" placeholder="Escreva sua opinião sobre o livro..." required></textarea>
             <label class="details-label" for="reviewerName">Nome do avaliador</label>
             <input id="reviewerName" name="reviewerName" class="review-name-input" type="text" maxlength="80" placeholder="Digite seu nome" required />

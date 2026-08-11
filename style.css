@@ -1825,3 +1825,49 @@ body:has(#autor) .author-photo img,
     left: 0;
   }
 }
+
+
+/* AJUSTE FINAL — LISTA "O QUE VOCÊ JÁ LEU" ABAIXO DO TÍTULO DO LIVRO */
+.read-status-below-title {
+  margin-top: -4px;
+  margin-bottom: 4px;
+}
+
+.read-status-row label {
+  font-weight: 900;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.read-status-row select {
+  font-weight: 900;
+  color: var(--text);
+  font-size: 18px;
+  min-height: 50px;
+}
+
+/* AJUSTE MENU LIVROS — SUBMENU INTERNO CENTRALIZADO E SEM AVALIAÇÕES */
+.dropdown-menu .submenu-dropdown {
+  align-items: center;
+}
+
+.dropdown-menu .submenu-toggle {
+  width: 100%;
+}
+
+.dropdown-menu .submenu-menu {
+  width: calc(100% - 24px);
+  margin: 8px auto 0 auto;
+  align-self: center;
+}
+
+@media (max-width: 900px) {
+  .dropdown-menu .submenu-dropdown {
+    align-items: stretch;
+  }
+
+  .dropdown-menu .submenu-menu {
+    width: 100%;
+    margin: 8px 0 0 0;
+  }
+}
